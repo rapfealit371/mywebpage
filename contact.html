@@ -3,30 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <header>
-      <h1 style="text-align: center;">Welcome to Party Rentals & Event Services!</h1>
-      <table style="width: 100;">
-        <tr>
-          <td style="text-align: center;">
-
-            <a href="index.html">Home</a> |
-            <a href="about.html">About Us</a> |<a href="services.html"
-              >Service</a
-            >| <a href="contact.html">Contact</a> |
-            <a href="gallery.html">gallery</a>
-          </td>
-        </tr>
-      </table>
-    </header>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-    <br>
-    <hr>
-    <h1>Contact Us</h1>
-    <p>Under Construction - Contact details and booking form coming soon!</p>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <footer>
-      <p>&copy; 2025 Party Rentals & Event Services</p>
-    </footer>
+    <header><h1>Contact Us</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>We’d Love to Hear From You!</h2>
+      <p>
+        Have a question about our services, packages, or pricing? We’re here to
+        help! Whether you’re planning a small birthday party or a large
+        corporate event, our team is ready to assist you every step of the way.
+        Use the form below to send us a message, and we’ll get back to you as
+        soon as possible.
+      </p>
+
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="" />
+
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder=""
+        ></textarea>
+
+        <button type="submit" class="button">Send Message</button>
+      </form>
+
+      <section style="margin-top: 40px">
+        <h3>Contact Information</h3>
+        <p>
+          <strong>📍 Address:</strong> 123 Celebration Street, Cityville, USA
+        </p>
+        <p><strong>📞 Phone:</strong> (555) 123-4567</p>
+        <p><strong>✉️ Email:</strong> info@partyrentals.com</p>
+      </section>
+
+      <section style="margin-top: 30px">
+        <h3>Find Us on the Map</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509747!2d144.9537353159043!3d-37.816279742012734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a8ec7edec5c8!2sCity%20Center!5e0!3m2!1sen!2sus!4v1631234567890"
+          width="100%"
+          height="300"
+          style="border: 0; border-radius: 10px"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Party Rentals & Event Services</footer>
   </body>
 </html>
