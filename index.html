@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Party Rentals & Event Services</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Extra animation styling */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.8s ease-in forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <header><h1>Welcome to Party Rentals & Event Services!</h1></header>
+    <header>
+      <h1>Welcome to Party Rentals & Event Services!</h1>
+      <img
+        src="banner.png"
+        alt="Party Rentals Banner"
+        width="800"
+        height="600"
+        style="width: 100%; border-radius: 10px"
+      />
+    </header>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -17,32 +44,267 @@
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
-    <main>
+
+    <main class="fade-in">
       <h2>Make Every Event Unforgettable!</h2>
       <p>
-        At Party Rentals & Event Services, we believe that every occasion
-        deserves to be extraordinary. We provide snow cone machines, popcorn
-        makers, cotton candy machines, and projector rentals to make your event
-        both exciting and memorable. Whether you are planning a birthday party,
-        wedding, school event, or corporate celebration, we bring the fun and
-        energy directly to you. Guests will love the smell of freshly popped
-        popcorn and the sweetness of spun cotton candy, while our colorful snow
-        cones add a cool touch to warm-weather gatherings. For evening events,
-        our high-quality projectors and screens turn any space into a
-        movie-night experience or an impressive presentation venue. To complete
-        the experience, our themed decorations add creativity and charm,
-        perfectly matching your event’s style and tone. We take pride in
-        providing clean, well-maintained equipment and friendly, dependable
-        service that removes the stress from party planning. Our goal is to make
-        your event planning simple and enjoyable, so you can focus on what truly
-        matters—creating lasting memories with your guests. With Party Rentals &
-        Event Services, every event becomes an opportunity to celebrate life’s
-        best moments.
+        At <strong>Party Rentals & Event Services</strong>, we believe that
+        every occasion deserves to be extraordinary. We provide snow cone
+        machines, popcorn makers, cotton candy machines, and projector rentals
+        to make your event both exciting and memorable. Whether you are planning
+        a birthday party, wedding, school event, or corporate celebration, we
+        bring the fun and energy directly to you.
       </p>
-      <br />
+      <p>
+        Guests will love the smell of freshly popped popcorn and the sweetness
+        of spun cotton candy, while our colorful snow cones add a cool touch to
+        warm-weather gatherings. For evening events, our projectors and screens
+        transform any space into a movie-night or presentation venue. Our goal
+        is to make your event planning simple and enjoyable, so you can focus on
+        creating lasting memories with your guests.
+      </p>
+
       <a href="services.html" class="button">Explore Our Services</a>
+
+      <!-- WHY CHOOSE US -->
+      <section style="margin-top: 60px">
+        <h2>Why Choose Us?</h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-top: 20px;
+          "
+        >
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 12px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3>🎉 Expert Planning</h3>
+            <p>
+              Our experienced team ensures every event detail is handled
+              perfectly.
+            </p>
+          </div>
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 12px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3>💡 Creative Themes</h3>
+            <p>
+              Choose from a variety of custom themes to make your event unique.
+            </p>
+          </div>
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 12px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3>🕒 On-Time Service</h3>
+            <p>We deliver, set up, and manage everything right on schedule.</p>
+          </div>
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 12px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3>💖 Customer Satisfaction</h3>
+            <p>
+              Thousands of happy clients trust us for their most important
+              occasions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section style="margin-top: 60px">
+        <h2>What Our Clients Say</h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+          "
+        >
+          <blockquote
+            style="
+              background: #ffffff;
+              border-left: 5px solid #9d4edd;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            "
+          >
+            “The team made our wedding absolutely magical! Every detail was
+            perfect.”
+            <br /><strong>– Sarah Williams</strong>
+          </blockquote>
+
+          <blockquote
+            style="
+              background: #ffffff;
+              border-left: 5px solid #9d4edd;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            "
+          >
+            “They were professional, creative, and so easy to work with. Highly
+            recommended!”
+            <br /><strong>– David Carter</strong>
+          </blockquote>
+
+          <blockquote
+            style="
+              background: #ffffff;
+              border-left: 5px solid #9d4edd;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            "
+          >
+            “Our corporate event ran smoothly thanks to their efficient service
+            and great equipment.”
+            <br /><strong>– Olivia Patel</strong>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section style="margin-top: 60px">
+        <h2>How It Works</h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-top: 20px;
+          "
+        >
+          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+            <h3>📞 Step 1</h3>
+            <p>Contact our team and share your event details.</p>
+          </div>
+          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+            <h3>🎨 Step 2</h3>
+            <p>Choose your preferred theme and rental options.</p>
+          </div>
+          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+            <h3>🚚 Step 3</h3>
+            <p>We deliver, decorate, and set up everything on time.</p>
+          </div>
+          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+            <h3>🎊 Step 4</h3>
+            <p>Enjoy your celebration — we’ll handle the rest!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section style="margin-top: 60px; text-align: center">
+        <h2>Our Highlights</h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+          "
+        >
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 10px;
+            "
+          >
+            <h3 style="color: #9d4edd">500+</h3>
+            <p>Successful Events</p>
+          </div>
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 10px;
+            "
+          >
+            <h3 style="color: #9d4edd">1,000+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 10px;
+            "
+          >
+            <h3 style="color: #9d4edd">50+</h3>
+            <p>Team Members</p>
+          </div>
+          <div
+            style="
+              background-color: #f6edff;
+              padding: 20px;
+              border-radius: 10px;
+            "
+          >
+            <h3 style="color: #9d4edd">100%</h3>
+            <p>Satisfaction Rate</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section
+        style="
+          margin-top: 60px;
+          background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+          color: white;
+          text-align: center;
+          padding: 40px;
+          border-radius: 12px;
+        "
+      >
+        <h2>Ready to Plan Your Next Event?</h2>
+        <p style="font-size: 1.2em">
+          Let’s make your special day stress-free and spectacular!
+        </p>
+        <a
+          href="contact.html"
+          style="
+            background: white;
+            color: #7b2cbf;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+          "
+          >Get in Touch</a
+        >
+      </section>
     </main>
-    <br /><br /><br />
+
     <footer>&copy; 2025 Party Rentals & Event Services</footer>
   </body>
 </html>
