@@ -5,7 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ==== Contact Page Interactive Styles ==== */
+      form {
+        background-color: #f6edff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        color: #4b0082;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .button {
+        margin-top: 15px;
+        background: #9d4edd;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .button:hover {
+        background: #7b2cbf;
+      }
+
+      #formStatus {
+        margin-top: 12px;
+        font-weight: bold;
+      }
+
+      /* Map Section */
+      #mapBox {
+        display: none;
+        margin-top: 20px;
+      }
+
+      #mapToggle {
+        background: #9d4edd;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      #mapToggle:hover {
+        background: #7b2cbf;
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <img
@@ -38,26 +107,28 @@
         soon as possible.
       </p>
 
-      <!-- CONTACT FORM -->
-      <form>
+      <!-- CONTACT FORM WITH VALIDATION -->
+      <form id="contactForm">
         <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="" required />
+        <input type="text" id="name" placeholder="Enter your name" />
 
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" placeholder="" required />
+        <input type="email" id="email" placeholder="Enter your email" />
 
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" placeholder="" />
+        <input type="tel" id="phone" placeholder="Optional" />
 
         <label for="message">Message:</label>
         <textarea
           id="message"
-          name="message"
           rows="5"
-          placeholder=""
+          placeholder="Type your message"
         ></textarea>
 
-        <button type="submit" class="button">Send Message</button>
+        <button type="button" class="button" onclick="validateForm()">
+          Send Message
+        </button>
+        <p id="formStatus"></p>
       </form>
 
       <!-- CONTACT INFO SECTION -->
@@ -70,52 +141,21 @@
         <p><strong>✉️ Email:</strong> info@partyrentals.com</p>
       </section>
 
-      <!-- WORKING HOURS TABLE -->
-      <section style="margin-top: 50px">
-        <h3>⏰ Working Hours</h3>
-        <table
-          style="
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background-color: #f6edff;
-            border-radius: 10px;
-            overflow: hidden;
-          "
-        >
-          <tr style="background-color: #9d4edd; color: white">
-            <th style="padding: 12px">Day</th>
-            <th style="padding: 12px">Opening Hours</th>
-          </tr>
-          <tr>
-            <td style="padding: 10px">Monday</td>
-            <td style="padding: 10px">9:00 AM – 6:00 PM</td>
-          </tr>
-          <tr style="background-color: #ffffff">
-            <td style="padding: 10px">Tuesday</td>
-            <td style="padding: 10px">9:00 AM – 6:00 PM</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px">Wednesday</td>
-            <td style="padding: 10px">9:00 AM – 6:00 PM</td>
-          </tr>
-          <tr style="background-color: #ffffff">
-            <td style="padding: 10px">Thursday</td>
-            <td style="padding: 10px">9:00 AM – 6:00 PM</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px">Friday</td>
-            <td style="padding: 10px">9:00 AM – 6:00 PM</td>
-          </tr>
-          <tr style="background-color: #ffffff">
-            <td style="padding: 10px">Saturday</td>
-            <td style="padding: 10px">10:00 AM – 4:00 PM</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px">Sunday</td>
-            <td style="padding: 10px">Closed</td>
-          </tr>
-        </table>
+      <!-- MAP TOGGLE FEATURE -->
+      <section style="margin-top: 50px; text-align: center">
+        <h3>📍 Find Us on the Map</h3>
+        <button id="mapToggle">Show / Hide Map</button>
+
+        <div id="mapBox">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509747!2d144.9537353159043!3d-37.816279742012734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a8ec7edec5c8!2sCity%20Center!5e0!3m2!1sen!2sus!4v1631234567890"
+            width="100%"
+            height="300"
+            style="border: 0; border-radius: 10px; margin-top: 15px"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
       </section>
 
       <!-- SOCIAL MEDIA LINKS -->
@@ -132,7 +172,6 @@
               src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
               alt="Facebook"
               width="40"
-              style="vertical-align: middle"
             />
           </a>
           <a
@@ -144,7 +183,6 @@
               src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
               alt="Instagram"
               width="40"
-              style="vertical-align: middle"
             />
           </a>
           <a
@@ -156,23 +194,9 @@
               src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png"
               alt="WhatsApp"
               width="40"
-              style="vertical-align: middle"
             />
           </a>
         </div>
-      </section>
-
-      <!-- MAP -->
-      <section style="margin-top: 50px">
-        <h3>Find Us on the Map</h3>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509747!2d144.9537353159043!3d-37.816279742012734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a8ec7edec5c8!2sCity%20Center!5e0!3m2!1sen!2sus!4v1631234567890"
-          width="100%"
-          height="300"
-          style="border: 0; border-radius: 10px"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
       </section>
 
       <!-- CALL TO ACTION -->
@@ -208,5 +232,39 @@
     </main>
 
     <footer>&copy; 2025 Party Rentals & Event Services</footer>
+
+    <!-- INTERACTIVE JS -->
+    <script>
+      // ========== FORM VALIDATION ==========
+      function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const status = document.getElementById("formStatus");
+
+        if (!name || !email || !message) {
+          status.style.color = "red";
+          status.innerText = "⚠️ Please fill in all required fields.";
+        } else if (!email.includes("@") || !email.includes(".")) {
+          status.style.color = "orange";
+          status.innerText = "📧 Please enter a valid email address.";
+        } else {
+          status.style.color = "green";
+          status.innerText =
+            "✅ Thank you, " + name + "! Your message has been sent.";
+          // clear fields
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+        }
+      }
+
+      // ========== MAP TOGGLE ==========
+      document.getElementById("mapToggle").addEventListener("click", () => {
+        const mapBox = document.getElementById("mapBox");
+        mapBox.style.display =
+          mapBox.style.display === "none" ? "block" : "none";
+      });
+    </script>
   </body>
 </html>

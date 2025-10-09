@@ -5,7 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ---------- Interactive Additions ---------- */
+
+      /* Timeline Cards */
+      .timeline {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .timeline-card {
+        background: #f6edff;
+        padding: 20px;
+        border-radius: 12px;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, background-color 0.4s, color 0.4s;
+      }
+      .timeline-card:hover {
+        background: #9d4edd;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      /* Fun Facts Counter */
+      .fun-facts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      .fact {
+        background: #f6edff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background 0.4s;
+      }
+      .fact:hover {
+        background: #9d4edd;
+        color: white;
+      }
+      .fact h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+      .fact p {
+        margin: 0;
+      }
+
+      /* Play Button */
+      #playBtn {
+        background: #9d4edd;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+      #playBtn:hover {
+        background: #7b2cbf;
+      }
+    </style>
   </head>
+
   <body>
     <header
       style="
@@ -17,8 +85,6 @@
       <img
         src="banner.png"
         alt="Party Rentals Banner"
-        width="800"
-        height="600"
         style="width: 100%; border-radius: 10px"
       />
       <h1>About Us</h1>
@@ -52,8 +118,27 @@
         to bring your ideas to life.
       </p>
 
+      <!-- Company Timeline -->
+      <section style="margin-top: 50px">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-card">
+            <h3>🎉 2020</h3>
+            <p>Started as a family-run business with 3 event machines.</p>
+          </div>
+          <div class="timeline-card">
+            <h3>🏆 2022</h3>
+            <p>Expanded to weddings and corporate events citywide.</p>
+          </div>
+          <div class="timeline-card">
+            <h3>🌍 2024</h3>
+            <p>Organized over 500 successful celebrations and growing!</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Mission & Vision Table -->
-      <section>
+      <section style="margin-top: 40px">
         <h2>Our Mission & Vision</h2>
         <table
           style="
@@ -117,8 +202,46 @@
         </table>
       </section>
 
+      <!-- Watch Us in Action Video -->
+      <section style="text-align: center; margin-top: 60px">
+        <h2>Watch Us in Action</h2>
+        <button id="playBtn">▶️ Play Video</button>
+        <div id="videoBox" style="display: none; margin-top: 20px">
+          <video width="640" height="360" controls>
+            <source
+              src="https://www.pexels.com/download/video/3326745/"
+              type="video/mp4"
+            />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </section>
+
+      <!-- Fun Facts -->
+      <section style="margin-top: 60px">
+        <h2>Fun Facts About Us</h2>
+        <div class="fun-facts">
+          <div class="fact">
+            <h3 class="counter" data-target="500">0</h3>
+            <p>Events Organized</p>
+          </div>
+          <div class="fact">
+            <h3 class="counter" data-target="120">0</h3>
+            <p>Weddings Planned</p>
+          </div>
+          <div class="fact">
+            <h3 class="counter" data-target="80">0</h3>
+            <p>Corporate Events</p>
+          </div>
+          <div class="fact">
+            <h3 class="counter" data-target="4.9">0</h3>
+            <p>Customer Rating</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Team Section -->
-      <section style="margin-top: 40px">
+      <section style="margin-top: 60px">
         <h2>Meet Our Team</h2>
         <div
           class="team"
@@ -159,7 +282,7 @@
             "
           >
             <img
-              src="https://images.unsplash.com/photo-1624797432677-6f803a98acb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBtYW58ZW58MHx8MHx8fDA%3D"
+              src="https://images.unsplash.com/photo-1624797432677-6f803a98acb3?w=600&auto=format&fit=crop&q=60"
               alt="Decor Specialist"
               style="width: 100%; border-radius: 10px"
             />
@@ -190,5 +313,45 @@
     </main>
 
     <footer>&copy; 2025 Party Rentals & Event Services</footer>
+    <script src="script.js"></script>
+
+    <!-- JS for Video and Counter Animation -->
+    <script>
+      // Play video on button click
+      document.getElementById("playBtn").addEventListener("click", () => {
+        document.getElementById("videoBox").style.display = "block";
+      });
+
+      // Fun Facts Counter Animation
+      const counters = document.querySelectorAll(".counter");
+      const speed = 150;
+
+      const animateCounters = () => {
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+              counter.innerText = (count + inc).toFixed(1);
+              setTimeout(updateCount, 20);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+        });
+      };
+
+      // Trigger animation when section is visible
+      const factsSection = document.querySelector(".fun-facts");
+      window.addEventListener("scroll", () => {
+        const rect = factsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          animateCounters();
+        }
+      });
+    </script>
   </body>
 </html>

@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ===== Hover Effect for Service Boxes ===== */
+      .service-card {
+        background-color: #f6edff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition: background-color 0.4s ease, color 0.4s ease,
+          transform 0.3s ease;
+        color: #3a1367;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        background-color: #9d4edd;
+        color: #fff;
+        transform: translateY(-5px);
+        cursor: pointer;
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <img
@@ -51,19 +72,19 @@
             text-align: center;
           "
         >
-          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+          <div class="service-card">
             <h3>🎈 Birthday Parties</h3>
             <p>Fun setups, candy machines, and balloon décor for all ages.</p>
           </div>
-          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+          <div class="service-card">
             <h3>💍 Weddings</h3>
             <p>Elegant themes, floral arrangements, and lighting packages.</p>
           </div>
-          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+          <div class="service-card">
             <h3>🏢 Corporate Events</h3>
             <p>Professional sound systems, projectors, and catering setups.</p>
           </div>
-          <div style="background: #f6edff; padding: 20px; border-radius: 10px">
+          <div class="service-card">
             <h3>🎪 School Carnivals</h3>
             <p>
               Games, snack booths, and colorful tents for kids and families.
@@ -127,6 +148,7 @@
         </table>
       </section>
 
+      <!-- SPECIAL OFFERS -->
       <section style="margin-top: 60px; text-align: center">
         <h2>🎁 Special Offers</h2>
         <p>Enjoy exciting discounts on select services!</p>
@@ -136,6 +158,19 @@
           <li>💐 Complimentary Floral Centerpieces for Wedding Events</li>
           <li>🎶 Corporate Events: Free Sound Check & Tech Support</li>
         </ul>
+      </section>
+
+      <!-- LIMITED-TIME PROMO (JS Countdown) -->
+      <section class="promo-card" data-countdown="2025-10-31T23:59:59">
+        <h2>🎉 Festival Offer — Ends Soon!</h2>
+        <p>
+          Book any package before <strong>Oct 31</strong> and get
+          <strong>10% OFF</strong>.
+        </p>
+        <div
+          class="time"
+          style="font-size: 1.4em; font-weight: 700; margin-top: 8px"
+        ></div>
       </section>
 
       <!-- CALL TO ACTION -->
@@ -172,5 +207,6 @@
     </main>
 
     <footer>&copy; 2025 Party Rentals & Event Services</footer>
+    <script src="script.js"></script>
   </body>
 </html>

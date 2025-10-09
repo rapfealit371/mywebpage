@@ -6,7 +6,7 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Gallery Hover Captions */
+      /* Gallery Styling */
       .gallery-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -49,7 +49,7 @@
         opacity: 1;
       }
 
-      /* Event Filter Buttons */
+      /* Buttons */
       .filter-buttons {
         text-align: center;
         margin-top: 25px;
@@ -72,7 +72,7 @@
         transform: translateY(-2px);
       }
 
-      /* Featured Slider */
+      /* Slider */
       .slider {
         display: flex;
         overflow-x: auto;
@@ -96,8 +96,6 @@
       <img
         src="banner.png"
         alt="Party Rentals Banner"
-        width="800"
-        height="600"
         style="width: 100%; border-radius: 10px"
       />
       <h1>Gallery</h1>
@@ -160,34 +158,6 @@
           />
           <div class="caption">Outdoor Event Decorations</div>
         </div>
-        <div class="gallery-item wedding">
-          <img
-            src="https://images.unsplash.com/photo-1671036154439-b3060f66b89e?q=80&w=687&auto=format&fit=crop"
-            alt="Wedding Reception Setup"
-          />
-          <div class="caption">Wedding Reception Setup</div>
-        </div>
-        <div class="gallery-item birthday">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1663089330017-199f32db1c24?q=80&w=687&auto=format&fit=crop"
-            alt="Birthday Cake and Balloons"
-          />
-          <div class="caption">Birthday Cake & Balloons</div>
-        </div>
-        <div class="gallery-item corporate">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1692880429698-e2b8dafbd591?q=80&w=687&auto=format&fit=crop"
-            alt="Event Buffet Table"
-          />
-          <div class="caption">Corporate Dinner Setup</div>
-        </div>
-        <div class="gallery-item outdoor">
-          <img
-            src="https://images.unsplash.com/photo-1599943821034-8cb5c7526922?q=80&w=1959&auto=format&fit=crop"
-            alt="Party Lights"
-          />
-          <div class="caption">Night Party Lighting</div>
-        </div>
       </div>
 
       <!-- FEATURED EVENTS SLIDER -->
@@ -206,10 +176,34 @@
             src="https://images.pexels.com/photos/6315305/pexels-photo-6315305.jpeg"
             alt="Evening Outdoor Party"
           />
-          <img
-            src="https://images.unsplash.com/photo-1610414302552-c002f989c663?q=80&w=687"
-            alt="Wedding Dance Floor"
-          />
+        </div>
+      </section>
+
+      <!-- FEATURED VIDEO SECTION -->
+      <section id="eventVideo" style="margin-top: 60px; text-align: center">
+        <h2>Behind-the-Scenes Videos</h2>
+        <p>Watch how we bring your dream events to life!</p>
+
+        <!-- First Video -->
+        <div style="margin-top: 20px">
+          <video width="640" height="360" controls>
+            <source
+              src="https://www.pexels.com/download/video/6396120/"
+              type="video/mp4"
+            />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+
+        <!-- Second Video -->
+        <div style="margin-top: 30px">
+          <video width="640" height="360" controls>
+            <source
+              src="https://www.pexels.com/download/video/3326745/"
+              type="video/mp4"
+            />
+            Your browser does not support HTML5 video.
+          </video>
         </div>
       </section>
 
@@ -247,17 +241,6 @@
 
     <footer>&copy; 2025 Party Rentals & Event Services</footer>
 
-    <script>
-      // Simple Filter Function
-      function filterGallery(category) {
-        let items = document.querySelectorAll(".gallery-item");
-        items.forEach((item) => {
-          item.style.display =
-            category === "all" || item.classList.contains(category)
-              ? "block"
-              : "none";
-        });
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
