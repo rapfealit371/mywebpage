@@ -6,7 +6,6 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* ==== Contact Page Interactive Styles ==== */
       form {
         background-color: #f6edff;
         padding: 25px;
@@ -29,6 +28,7 @@
         margin-top: 5px;
         border: 1px solid #ccc;
         border-radius: 8px;
+        font-family: "Poppins", sans-serif;
       }
 
       .button {
@@ -47,12 +47,6 @@
         background: #7b2cbf;
       }
 
-      #formStatus {
-        margin-top: 12px;
-        font-weight: bold;
-      }
-
-      /* Map Section */
       #mapBox {
         display: none;
         margin-top: 20px;
@@ -80,8 +74,6 @@
       <img
         src="banner.png"
         alt="Party Rentals Banner"
-        width="800"
-        height="600"
         style="width: 100%; border-radius: 10px"
       />
       <h1>Contact Us</h1>
@@ -93,7 +85,7 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
       </ul>
     </nav>
 
@@ -107,41 +99,48 @@
         soon as possible.
       </p>
 
-      <!-- CONTACT FORM WITH VALIDATION -->
-      <form id="contactForm">
+      <!-- ✅ Updated form -->
+      <form action="./submit_form.php" method="POST">
         <label for="name">Full Name:</label>
-        <input type="text" id="name" placeholder="Enter your name" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
 
         <label for="email">Email Address:</label>
-        <input type="email" id="email" placeholder="Enter your email" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
 
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" placeholder="Optional" />
+        <input type="tel" id="phone" name="phone" placeholder="Optional" />
 
         <label for="message">Message:</label>
         <textarea
           id="message"
+          name="message"
           rows="5"
           placeholder="Type your message"
+          required
         ></textarea>
 
-        <button type="button" class="button" onclick="validateForm()">
-          Send Message
-        </button>
-        <p id="formStatus"></p>
+        <button type="submit" class="button">Send Message</button>
       </form>
 
-      <!-- CONTACT INFO SECTION -->
       <section style="margin-top: 40px">
         <h3>Contact Information</h3>
-        <p>
-          <strong>📍 Address:</strong> 123 Celebration Street, Cityville, USA
-        </p>
+        <p><strong>📍 Address:</strong> 123 Celebration Street, Cityville</p>
         <p><strong>📞 Phone:</strong> (555) 123-4567</p>
         <p><strong>✉️ Email:</strong> info@partyrentals.com</p>
       </section>
 
-      <!-- MAP TOGGLE FEATURE -->
       <section style="margin-top: 50px; text-align: center">
         <h3>📍 Find Us on the Map</h3>
         <button id="mapToggle">Show / Hide Map</button>
@@ -157,109 +156,11 @@
           ></iframe>
         </div>
       </section>
-
-      <!-- SOCIAL MEDIA LINKS -->
-      <section style="margin-top: 50px; text-align: center">
-        <h3>🌐 Connect With Us</h3>
-        <p>Follow us on social media for updates, offers, and event ideas!</p>
-        <div style="margin-top: 15px">
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            style="margin: 10px; text-decoration: none"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-              alt="Facebook"
-              width="40"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            style="margin: 10px; text-decoration: none"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-              alt="Instagram"
-              width="40"
-            />
-          </a>
-          <a
-            href="https://www.whatsapp.com"
-            target="_blank"
-            style="margin: 10px; text-decoration: none"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png"
-              alt="WhatsApp"
-              width="40"
-            />
-          </a>
-        </div>
-      </section>
-
-      <!-- CALL TO ACTION -->
-      <section
-        style="
-          margin-top: 60px;
-          background: linear-gradient(90deg, #9d4edd, #7b2cbf);
-          color: white;
-          text-align: center;
-          padding: 40px;
-          border-radius: 12px;
-        "
-      >
-        <h2>Let’s Make Your Celebration Perfect!</h2>
-        <p style="font-size: 1.1em">
-          Reach out today and get a personalized quote for your next event.
-        </p>
-        <a
-          href="mailto:info@partyrentals.com"
-          style="
-            background: white;
-            color: #7b2cbf;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 15px;
-          "
-          >Email Us Now</a
-        >
-      </section>
     </main>
 
     <footer>&copy; 2025 Party Rentals & Event Services</footer>
 
-    <!-- INTERACTIVE JS -->
     <script>
-      // ========== FORM VALIDATION ==========
-      function validateForm() {
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-        const status = document.getElementById("formStatus");
-
-        if (!name || !email || !message) {
-          status.style.color = "red";
-          status.innerText = "⚠️ Please fill in all required fields.";
-        } else if (!email.includes("@") || !email.includes(".")) {
-          status.style.color = "orange";
-          status.innerText = "📧 Please enter a valid email address.";
-        } else {
-          status.style.color = "green";
-          status.innerText =
-            "✅ Thank you, " + name + "! Your message has been sent.";
-          // clear fields
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("message").value = "";
-        }
-      }
-
-      // ========== MAP TOGGLE ==========
       document.getElementById("mapToggle").addEventListener("click", () => {
         const mapBox = document.getElementById("mapBox");
         mapBox.style.display =
